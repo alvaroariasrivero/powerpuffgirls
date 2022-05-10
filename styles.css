@@ -22,6 +22,9 @@ body{
     width: var(--width); 
     height: var(--height);
     background: #222;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .head{
@@ -30,9 +33,67 @@ body{
     border: var(--border-size) solid #000;
     border-radius: 50%;
     overflow: hidden;
-    display: flex;
     background: var(--skin-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 3px 0 #0005;
+    z-index: 5;
 }
+
+.hair{
+    width: 100%;
+    height: 40%;
+    background: 
+        radial-gradient(ellipse 175px 150px at 15% -25% , #fcdb04 50%, transparent 51%),
+        radial-gradient(ellipse 175px 150px at 85% -25% , #fcdb04 50%, transparent 51%),
+        radial-gradient(ellipse 175px 150px at 15% -25% , #000 52%, transparent 53%),
+        radial-gradient(ellipse 175px 150px at 85% -25% , #000 52%, transparent 53%);
+    position: absolute;
+    z-index: 10;
+}
+
+.mouth{
+    width: 6%;
+    height: 8%;
+    border-radius: 50%;
+    border: var(--border-size) solid #000;
+    clip-path: polygon(0 100%, 100% 100%, 100% 50%, 0 50%);
+}
+
+.body-container{
+    width: 30%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    filter: 
+        drop-shadow(2px 0 0 #000)
+        drop-shadow(-2px 0 0 #000)
+        drop-shadow(0 -2px 0 #000)
+        drop-shadow(0 2px 0 #000);
+    transform: translateY(-5%);
+}
+
+.body-container .body{
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(8% 0, 92% 0, 100% 100%, 0 100%);
+    background: 
+        linear-gradient(
+            to bottom, 
+            var(--bubbles-color) 0 27%, 
+            #000 28% 71%, 
+            var(--bubbles-color) 72% 100%);
+    /* border: var(--border-size) solid #000; */
+}
+
+.legs{
+    
+}
+
+/* EYES */
 
 .eyes{
     --gap: 10%;
@@ -41,7 +102,7 @@ body{
     gap: 0 var(--gap);
     width: calc(var(--width)*1.2);
     height: calc(var(--width)*0.6);
-    transform: translateX(calc(-1 * var(--gap)));
+    transform: translateY(10%);
 }
 
 .eye{
@@ -57,15 +118,17 @@ body{
 
 .iris{
     background: var(--bubbles-color);
-    width: 85%;
+    width: 90%;
     height: 85%;
     border-radius: 50%;
-    transform: translateX(calc(-1 * 5%));
+    transform: translateX(calc(-1 * 15%));
+    display: flex;
+    align-items: center;
 }
 
 .pupil{
-    width: 90%;
-    height: 90%;
+    width: 87%;
+    height: 82%;
     background: black;
     border-radius: 50%;
     display: flex;
@@ -73,11 +136,11 @@ body{
 }
 
 .shine{
-    width: 35%;
-    height: 30%;
+    width: 34%;
+    height: 32%;
     background: #fff;
     border-radius: 50%;
-    transform: translateX(15%);
+    transform: translateX(60%);
 }
 
 .left.eye{
