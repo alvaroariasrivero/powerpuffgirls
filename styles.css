@@ -21,7 +21,7 @@ body{
 .contenedor{
     width: var(--width); 
     height: var(--height);
-    background: #222;
+    background: #2222;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -78,7 +78,6 @@ body{
         drop-shadow(0 -2px 0 #000)
         drop-shadow(0 2px 0 #000);
     transform: translateY(-5%);
-    z-index: 2;
     position: relative;
 }
 
@@ -99,27 +98,53 @@ body{
 /*//////////////////////////////// LEGS ////////////////////////////////////////////////*/
 
 .legs{
-    display: flex;
-    z-index: 5;
+    width: 32%;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .leg{
     width: 30px;
     height: 30px;
-    box-shadow: 0 8px 0 #0005 inset;
-    border: 3px solid #000;
     background: #fff;
-    transform: translateY(-30%);
+    box-shadow: 0 6px 0 #0005 inset;
+    display: flex;
+    border: 3px solid #000;
+    position: relative;
+    top: -3px;
 }
 
 .up{
+    height: 90%;
     box-shadow: none;
     border-radius: 50%;
-    transform: translateY(-75%);
+    transform: translate(-5%, -40%);
 }
 
 .shoe{
+    width: 120%;
+    height: 100%;
+    background: #000;
+    border-radius: 0 0 50% 50%;
+    position: absolute;
+    transform: translate(-8.75%, 75%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.sock{
+    background: #fff;
+    width: 45%;
+    height: 40%;
+    border-radius: 0 0 50% 50%;
+    clip-path: polygon(0 25%, 100% 25%, 100% 100%, 0 100%);
+}
+
+.up .shoe{
+    transform: translate(-10%, 25%);
+    border-radius: 15% 15% 50% 50%;
 }
 
 /*//////////////////////////////// EYES ///////////////////////////////////////////////*/
